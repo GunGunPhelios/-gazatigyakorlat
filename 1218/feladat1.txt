@@ -1,0 +1,50 @@
+Íme egy könnyű feladat Pythonból, amely segíthet a szoftverfejlesztői ágazati vizsga gyakorlásában:
+
+Feladat:
+Készíts egy Python programot, amely egy szótár segítségével számolja meg, hogy hány különböző betű fordul elő egy adott szövegben! A szöveg csak kis- és nagybetűkből állhat, a program ne vegye figyelembe a kis- és nagybetűk közötti különbséget.
+
+Részletes leírás:
+Kérj be egy szöveget a felhasználótól.
+Készíts egy üres szótárat, amelyben kulcsként a betűket tárolod, értékként pedig a betű előfordulásának számát.
+A szöveg minden karakterét ellenőrizd:
+Ha a karakter betű (a-z, A-Z), számold meg, hogy hányszor szerepel.
+Ne számold duplán a betűket, csak egyszer minden egyes típusú betűt.
+A program végén írd ki a betűk számát és a szótárban tárolt értékeket.
+Példa:
+Bemenet:
+
+
+Adj meg egy szöveget: Hello World
+A szövegben lévő betűk előfordulása:
+h: 1
+e: 1
+l: 3
+o: 2
+w: 1
+r: 1
+d: 1
+
+def betu_fordulok(szoveg):
+    # Kis- és nagybetűk közötti különbség figyelmen kívül hagyása
+    szoveg = szoveg.lower()
+    
+    # Üres szótár létrehozása
+    betu_dict = {}
+    
+    # A szöveg minden karakterét megvizsgáljuk
+    for karakter in szoveg:
+        if karakter.isalpha():  # Csak betűk számítanak
+            if karakter in betu_dict:
+                betu_dict[karakter] += 1
+            else:
+                betu_dict[karakter] = 1
+    
+    # Eredmény kiírása
+    print("A szövegben lévő betűk előfordulása:")
+    for betu, darab in betu_dict.items():
+        print(f"{betu}: {darab}")
+
+# A szöveg bekérése a felhasználótól
+szoveg = input("Adj meg egy szöveget: ")
+betu_fordulok(szoveg)
+

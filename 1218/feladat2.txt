@@ -1,0 +1,63 @@
+Rendben! Íme egy Python feladat, amely öt fegyver közül választ egyet véletlenszerűen, majd a választott fegyverhez tartozó lépéseket követi a megadott sorrendben.
+
+Feladat:
+Készíts egy Python programot, amely véletlenszerűen kiválaszt egy fegyvert az alábbiak közül: Piros, Zöld, Lila, Kék, Fehér. Miután kiválasztotta a fegyvert, a programnak ki kell írnia a hozzá tartozó lépéseket az adott sorrendben.
+
+Fegyverek és lépések:
+Piros: Támadás, Lerohanás, Gyógyulás
+Zöld: Támadás, Fejlövés, Csúszás
+Lila: Támadás, Lassítás, Térmanipuláció
+Kék: Támadás, Felrobbantás, Szórás
+Fehér: Támadás, Löveg helyezés, Dobás
+Példa:
+Bemenet:
+
+Nincs bemenet, a program véletlenszerűen választ egy fegyvert.
+Kimenet:
+
+Ha a kiválasztott fegyver a "Zöld" lenne:
+less
+Kód másolása
+A kiválasztott fegyver: Zöld
+Lépések:
+1. lépés: Támadás
+2. lépés: Fejlövés
+3. lépés: Csúszás
+Megoldás:
+python
+Kód másolása
+import random
+
+# A fegyverek és a hozzájuk tartozó lépések meghatározása
+fegyverek = {
+    "Piros": ["Támadás", "Lerohanás", "Gyógyulás"],
+    "Zöld": ["Támadás", "Fejlövés", "Csúszás"],
+    "Lila": ["Támadás", "Lassítás", "Térmanipuláció"],
+    "Kék": ["Támadás", "Felrobbantás", "Szórás"],
+    "Fehér": ["Támadás", "Löveg helyezés", "Dobás"]
+}
+
+# Véletlenszerű fegyver választása
+valasztott_fegyver = random.choice(list(fegyverek.keys()))
+
+# A kiválasztott fegyver és a lépések kiírása
+print(f"A kiválasztott fegyver: {valasztott_fegyver}")
+print("Lépések:")
+for i, lepés in enumerate(fegyverek[valasztott_fegyver], 1):
+    print(f"{i}. lépés: {lépés}")
+Működés:
+A random.choice véletlenszerűen választ egy fegyvert a fegyverek szótár kulcsai közül.
+A program a választott fegyverhez tartozó lépések listáját veszi és kiírja a lépéseket az előírt sorrendben.
+Példa futás:
+Ha a véletlenszerű választás "Zöld" fegyvert ad, a kimenet:
+less
+Kód másolása
+A kiválasztott fegyver: Zöld
+Lépések:
+1. lépés: Támadás
+2. lépés: Fejlövés
+3. lépés: Csúszás
+Ez a feladat segít gyakorolni a Python szótárak és listák használatát, valamint a véletlenszerű választás alkalmazását.
+
+
+

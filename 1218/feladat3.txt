@@ -1,0 +1,61 @@
+Íme egy Python feladat, amely kiszámolja, hogy mikor lesz a következő szökőév:
+
+Feladat:
+Készíts egy Python programot, amely bekéri a felhasználótól az aktuális évet, majd kiszámolja, hogy mikor lesz a következő szökőév.
+
+Szökőév definíció:
+A szökőév minden olyan év, amely:
+osztható 4-tel, de nem osztható 100-zal, kivéve ha osztható 400-zal.
+Például: 2000 és 2400 szökőévek, de 1800, 1900 nem.
+Részletes leírás:
+A programnak bekérnie kell az aktuális évet.
+A programnak meg kell keresnie az első olyan évet, amely szökőév, és nagyobb vagy egyenlő az aktuális évnél.
+A programnak ki kell írnia a következő szökőévet.
+Példa:
+Bemenet:
+
+yaml
+Kód másolása
+Adj meg egy évet: 2024
+Kimenet:
+
+css
+Kód másolása
+A következő szökőév: 2024
+Megoldás:
+python
+Kód másolása
+# Szökőév ellenőrzése
+def szoko_ev(ev):
+    if (ev % 4 == 0 and ev % 100 != 0) or (ev % 400 == 0):
+        return True
+    return False
+
+# Felhasználói bemenet
+aktualis_ev = int(input("Adj meg egy évet: "))
+
+# A következő szökőév keresése
+kovetkezo_ev = aktualis_ev
+while not szoko_ev(kovetkezo_ev):
+    kovetkezo_ev += 1
+
+# Eredmény kiírása
+print(f"A következő szökőév: {kovetkezo_ev}")
+Működés:
+A szoko_ev függvény ellenőrzi, hogy egy adott év szökőév-e.
+A program bekéri a felhasználótól az aktuális évet.
+A while ciklus végigmegy az éven, amíg nem talál egy szökőévet, amely nagyobb vagy egyenlő az aktuális évvel.
+A program kiírja a következő szökőévet.
+Példa futás:
+Bemenet: 2024
+
+Kimenet: A következő szökőév: 2024
+
+Bemenet: 2025
+
+Kimenet: A következő szökőév: 2028
+
+Ez a feladat segít gyakorolni az évek és ciklusok kezelését, valamint a szökőévek logikájának implementálását Pythonban.
+
+
+
